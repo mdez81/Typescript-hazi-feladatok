@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Inventory_1 = require("./classes/Inventory");
+const Product_1 = require("./classes/Product");
+const User_1 = require("./classes/User");
+const inventory = new Inventory_1.Inventory;
+const product1 = new Product_1.Product("1", "Acer hl-100", 300000, "Acer gamer laptop");
+const product2 = new Product_1.Product("2", "Nokia C-41", 320000, "Nokia smart phone");
+inventory.addProduct(product1);
+inventory.addProduct(product2);
+const user = new User_1.User("100", "Lary King", "lk89@mail.com");
+user.placeOrder([product1, product2], inventory);
