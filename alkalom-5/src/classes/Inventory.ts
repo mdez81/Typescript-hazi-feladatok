@@ -1,10 +1,10 @@
 import { IInventory } from "../interfaces/IInventory";
 import { Product } from "./Product";
-//import { IInventory } from "@classes/IInventory";
+
 
 export class Inventory implements IInventory {
 
-    protected productsList: Product[] = [];
+  private productsList: Product[] = [];
 
     addProduct(product: Product): void {
         this.productsList.push(product);
@@ -22,12 +22,7 @@ export class Inventory implements IInventory {
       return this.productsList;
     }
 
-   
-
-
-
-
-
-
-    
+    getItemById<T>(items:T[], id: keyof T & string, value: string){
+      return items.find(item => item[id] == value);
+  }
 }

@@ -1,6 +1,7 @@
-import { Order } from "./Order";
-import { Product } from "./Product";
-import { Inventory } from "./Inventory";
+import { Inventory } from "../classes/Inventory";
+import { Order } from "../classes/Order";
+import { Product } from "../classes/Product";
+
 
 export class User {
 

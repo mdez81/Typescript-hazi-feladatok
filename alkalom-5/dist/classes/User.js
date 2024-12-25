@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
-const Order_1 = require("./Order");
+const Order_1 = require("../classes/Order");
 class User {
     constructor(userId, name, email) {
         this.userId = userId;

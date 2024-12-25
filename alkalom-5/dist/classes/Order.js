@@ -3,32 +3,47 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Order = void 0;
 const OrderState_1 = require("../enums/OrderState");
 class Order {
-    constructor(orderId, productList) {
+    constructor(orderId, productsList) {
         this._productsList = [];
         this._orderId = orderId;
-        this._productsList = productList;
+        this._productsList = productsList;
         this._orderState = OrderState_1.OrderState.new;
     }
     get orderId() {
-        return this.orderId;
+        return this._orderId;
     }
     set orderId(newOrderId) {
-        this.orderId = newOrderId;
+        if (newOrderId && newOrderId.length > 0) {
+            this.orderId = newOrderId;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     get productsList() {
-        return this.productsList;
+        return this._productsList;
     }
     set prodoctsList(newProductList) {
-        this.prodoctsList = newProductList;
+        if (newProductList && newProductList.length > 0) {
+            this._productsList = newProductList;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     get orderSate() {
-        return this.orderSate;
+        return this._orderState;
     }
-    set orderSate(newOrderStae) {
-        this.orderSate = newOrderStae;
+    set orderSate(newOrderState) {
+        if (newOrderState && newOrderState.length > 0) {
+            this._orderState = newOrderState;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     sumOrders() {
-        return this.prodoctsList.reduce((sum, product) => sum + product.price, 0);
+        return this._productsList.reduce((sum, product) => sum + product.price, 0);
     }
 }
 exports.Order = Order;

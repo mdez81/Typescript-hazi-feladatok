@@ -1,8 +1,9 @@
 export class Product {
-    protected _id: string;
-    protected _name : string;
-    protected _price: number;
-    protected _description?: string;
+
+    private _id: string;
+    private _name : string;
+    private _price: number;
+    private _description?: string;
 
     constructor(id:string, name: string, price: number, description: string){
         this._id = id;
@@ -16,7 +17,12 @@ export class Product {
     }
 
     set id (newId : string){
-        this._id = newId;
+        if(newId && newId.length > 0){
+            this._id = newId;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
 
     get name (): string {
@@ -24,7 +30,12 @@ export class Product {
     }
 
     set name (newName : string){
-        this._name = newName;
+        if(newName && newName.length > 4){
+            this._name = newName;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
 
     get price (): number {
@@ -32,7 +43,12 @@ export class Product {
     }
 
     set price (newPrice : number){
-        this._price = newPrice;
+        if(newPrice && newPrice > 0){
+            this._price = newPrice;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
 
     get description (): string | undefined {
@@ -40,7 +56,11 @@ export class Product {
     }
 
     set description (newDescription : string){
-        this.description = newDescription;
+        if(newDescription && newDescription.length > 4){
+            this.description = newDescription;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
-
 }

@@ -12,25 +12,45 @@ class Product {
         return this._id;
     }
     set id(newId) {
-        this._id = newId;
+        if (newId && newId.length > 0) {
+            this._id = newId;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     get name() {
         return this._name;
     }
     set name(newName) {
-        this._name = newName;
+        if (newName && newName.length > 4) {
+            this._name = newName;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     get price() {
         return this._price;
     }
     set price(newPrice) {
-        this._price = newPrice;
+        if (newPrice && newPrice > 0) {
+            this._price = newPrice;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
     get description() {
         return this._description;
     }
     set description(newDescription) {
-        this.description = newDescription;
+        if (newDescription && newDescription.length > 4) {
+            this.description = newDescription;
+        }
+        else {
+            throw new Error("Invalid data");
+        }
     }
 }
 exports.Product = Product;

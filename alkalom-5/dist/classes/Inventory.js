@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Inventory = void 0;
-//import { IInventory } from "@classes/IInventory";
 class Inventory {
     constructor() {
         this.productsList = [];
@@ -17,6 +16,9 @@ class Inventory {
     }
     listAllProduct() {
         return this.productsList;
+    }
+    getItemById(items, id, value) {
+        return items.find(item => item[id] == value);
     }
 }
 exports.Inventory = Inventory;

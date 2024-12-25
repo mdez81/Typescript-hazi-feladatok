@@ -4,6 +4,6 @@ export interface IInventory {
 
     addProduct(product: Product):void;
     removeProduct(id: string): void;
-    searchProduct(id: string,  name: string): Product  | undefined;
+    searchProduct(prodata: string): Product  | undefined;
     listAllProduct():Product[];
 }
