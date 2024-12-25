@@ -1,1 +1,0 @@
-{"root":["./src/app.ts","./src/classes/inventory.ts","./src/classes/order.ts","./src/classes/product.ts","./src/classes/user.ts","./src/enums/orderstate.ts","./src/interfaces/iinventory.ts"],"version":"5.7.2"}

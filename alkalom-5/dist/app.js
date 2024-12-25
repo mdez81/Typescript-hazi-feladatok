@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const inventory_1 = require("./classes/inventory");
+const Inventory_1 = require("./classes/Inventory");
 const Order_1 = require("./classes/Order");
 const Product_1 = require("./classes/Product");
 const User_1 = require("./classes/User");
 const OrderState_1 = require("./enums/OrderState");
-const inventory = new inventory_1.Inventory();
+const inventory = new Inventory_1.Inventory();
 const product1 = new Product_1.Product("1", "Acer hl-100", 300000, "Acer gamer laptop");
 const product2 = new Product_1.Product("2", "Nokia C-41", 320000, "Nokia smart phone");
 inventory.addProduct(product1);

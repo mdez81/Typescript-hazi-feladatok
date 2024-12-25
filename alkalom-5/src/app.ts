@@ -1,5 +1,5 @@
 
-import { Inventory } from "./classes/inventory";
+import { Inventory } from "./classes/Inventory";
 import { Order } from "./classes/Order";
 import { Product } from "./classes/Product";
 import { User } from "./classes/User";
