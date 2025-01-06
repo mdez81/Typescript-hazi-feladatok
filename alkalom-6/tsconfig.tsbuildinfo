@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/models/todoitem.ts","./src/services/addtodo.ts","./src/services/filtertodos.ts","./src/services/listtodo.ts","./src/services/logging.ts","./src/services/removetodo.ts","./src/services/todolist.ts","./src/services/todotypes.ts","./src/utils/mylog.ts"],"version":"5.7.2"}
