@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Library_1 = require("./services/Library");
+const LoanManager_1 = require("./services/LoanManager");
+const library = new Library_1.Library();
+const loanManager = new LoanManager_1.LoanManager();
+const book1 = ({ _id: "1", _title: "1984", _author: "George Orwell", _category: "Fiction" });
+const book2 = ({ _id: "2", _title: "Sapiens", _author: "Yuval Noah Harari", _category: "Science" });
+const borrower1 = ({ id: "1", name: 'Alice', borrowedBooks: [] });
+library.addBook(book1);
+library.addBook(book2);
+library.addBorrower(borrower1);
+loanManager.borrowItem(book1._id, borrower1.id, library.borrowBook);
+console.log(borrower1.borrowedBooks);
+loanManager.returnItem(book1._id, borrower1.id, library.returnBook);
+console.log(borrower1.borrowedBooks);

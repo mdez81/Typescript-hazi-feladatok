@@ -1,7 +1,7 @@
 import { IBook } from "./IBook";
 
 export interface IBorrower {
-    id:string;
+    id: string;
     name: string;
     borrowedBooks:IBook[];
 }

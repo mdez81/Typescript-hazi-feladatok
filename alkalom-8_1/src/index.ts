@@ -1,18 +1,21 @@
+import { IBook } from "./models/IBook";
+import { IBorrower } from "./models/Iborrower";
+import { Library } from "./services/Library";
+import { LoanManager } from "./services/LoanManager";
 
-import { Book } from "./models/Book";
-import { FictionBook } from "./models/FictionBook";
-//import { IBook } from "./models/IBook";
-import { Library } from "./models/Library";
-import { ScienceBook } from "./models/ScienceBook";
+const library = new Library();
+const loanManager = new LoanManager<IBook>();
 
+const book1: IBook = ({ _id: "1", _title: "1984", _author: "George Orwell", _category: "Fiction" });
+const book2: IBook = ({ _id: "2", _title: "Sapiens", _author: "Yuval Noah Harari", _category: "Science" });
+const borrower1: IBorrower = ({ id: "1", name: 'Alice', borrowedBooks: [] });
 
+library.addBook(book1);
+library.addBook(book2);
+library.addBorrower(borrower1);
 
-const myLibrary = new Library<Book<string>>();
-myLibrary.addBook(new ScienceBook('1',  'Php Cookbook', 'John Smith', 200));
-myLibrary.addBook(new FictionBook('2', '1984',  'George Orwell', 270))
+loanManager.borrowItem(book1._id, borrower1.id, library.borrowBook);
+console.log(borrower1.borrowedBooks); 
 
-myLibrary.addUser({name: "George Bell", memberId: "001" });
-myLibrary.findUser("001");
-
-myLibrary.borrowBook('1', "001");
-myLibrary.returnBook('2');
+loanManager.returnItem(book1._id, borrower1.id, library.returnBook);
+console.log(borrower1.borrowedBooks); 

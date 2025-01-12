@@ -3,6 +3,5 @@ export interface IBook {
     _title: string;
     _author: string;
     _category: string;
-    getDesription():string;
   }
   
